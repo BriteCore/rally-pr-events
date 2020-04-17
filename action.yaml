@@ -8,7 +8,7 @@ inputs:
   item_type:
     description: 'Rally Item Type'
     required: true
-  values:
+  key_values:
     description: 'Key:Value Pairs'
     required: true
   rally_api_key:
@@ -19,7 +19,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.values }}
+    - ${{ inputs.key_values }}
     - ${{ inputs.item_id }}
     - ${{ inputs.rally_api_key }}
     - ${{ inputs.item_type }}

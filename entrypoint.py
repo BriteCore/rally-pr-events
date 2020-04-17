@@ -38,7 +38,7 @@ def main():
 	# Get Env variables
     item_id = os.getenv('INPUT_ITEM_ID')
     item_type = os.getenv('INPUT_ITEM_TYPE')
-    values = os.getenv('INPUT_VALUES')
+    values = os.getenv('INPUT_KEY_VALUES')
     API_KEY = os.getenv('INPUT_RALLY_API_KEY')
 
     # Instantiate Rally Instance
