@@ -1,11 +1,17 @@
-FROM python:3.8.2-slim
+FROM python:3.7-alpine
 
-COPY entrypoint.py /entrypoint.py
+LABEL "com.github.actions.name"="Update Rally Items"
+LABEL "com.github.actions.description"="Update Rally stories based on PR events."
+
+COPY *.py /
+
 COPY requirements.txt /requirements.txt
 
-RUN echo "$values"
+RUN apk update \
+    && apk upgrade \
+    && apk add --no-cache git openssh
+RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
-RUN chmod +x entrypoint.py
 
-ENTRYPOINT ["/entrypoint.py"]
+CMD ["python", "/entrypoint.py"]

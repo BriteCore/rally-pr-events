@@ -1,7 +1,6 @@
 name: Rally Updates
 description: 'Updates Rally Items when PR changes'
 
-
 inputs:
   item_id:
     description: 'Rally Identifier'
