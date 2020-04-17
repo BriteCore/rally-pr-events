@@ -1,7 +1,7 @@
-FROM python:latest
+FROM 3.8.2-alpine3.11
 
 COPY entrypoint.py /entrypoint.py
-COPU requirements.txt /requirements.txt
+COPY requirements.txt /requirements.txt
 
 RUN echo "$values"
 
