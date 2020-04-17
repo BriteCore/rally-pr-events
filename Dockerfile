@@ -1,4 +1,4 @@
-FROM 3.8.2-alpine3.11
+FROM python:3.8.2-slim
 
 COPY entrypoint.py /entrypoint.py
 COPY requirements.txt /requirements.txt
