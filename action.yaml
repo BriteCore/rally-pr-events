@@ -12,7 +12,7 @@ inputs:
   values:
     description: 'Key:Value Pairs'
     required: true
-  rally_api_token:
+  rally_api_key:
     description: 'Rally API Token'
     required: true
 
