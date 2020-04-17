@@ -1,0 +1,26 @@
+name: Rally Updates
+description: 'Updates Rally Items when PR changes'
+
+
+inputs:
+  item_id:
+    description: 'Rally Identifier'
+    required: true
+  item_type:
+    description: 'Rally Item Type'
+    required: true
+  values:
+    description: 'Key:Value Pairs'
+    required: true
+  rally_api_token:
+    description: 'Rally API Token'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.values }}
+    - ${{ inputs.item_id }}
+    - ${{ inputs.rally_api_key }}
+    - ${{ inputs.item_type }}
