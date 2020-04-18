@@ -7,11 +7,14 @@ COPY *.py /
 
 COPY requirements.txt /requirements.txt
 
-RUN apk update \
-    && apk upgrade \
-    && apk add --no-cache git openssh
 RUN pip install --upgrade pip
 
 RUN pip install -r requirements.txt
 
-CMD ["python", "/entrypoint.py"]
+# Setup docker entry point
+COPY entrypoint.sh /usr/local/bin/
+
+RUN chmod 777 /usr/local/bin/entrypoint.sh \
+    && ln -s /usr/local/bin/entrypoint.sh /
+
+ENTRYPOINT ["entrypoint.sh"]
