@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-python entrypoint.py
+python /entrypoint.py
